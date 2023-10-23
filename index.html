@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Invitación de Cumpleaños!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #002e15;
+        }
+        .invitation-card {
+            background-color: #125c33;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h1 {
+            color: #00221b;
+            background-color: #ecefed;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        p {
+            font-size: 18px;
+            color: #00221b;
+        }
+
+        #button {
+            background-color: #ecefed;
+            color: #00221b;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #button:hover {
+            background-color: #48dea5;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="invitation-card">
+        <h1>¡Cumpleaños de Juan Maximo!</h1>
+
+        <p>¡Estás invitado a dejar tu hermoso regalito en el boton de abajo &#x1f4b8; &#x1f447; &#x1f4b8; !</p>
+       
+        <button id="button" onclick="location.href='https://link.mercadopago.com.ar/juanmaximo'">Hacer un regalo!!!</button>
+
+    </div>
+
+    <script>
+        document.getElementById('button').addEventListener('click', function() {
+            var button = document.getElementById('button');
+            button.textContent = '¡Ya realizaste tu regalo!';
+            button.style.backgroundColor = '#66cc33';
+            button.style.cursor = 'default';
+            button.disabled = true;
+        });
+    </script>
+
+
+</body>
+</html>
