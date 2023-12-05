@@ -13,6 +13,27 @@
             background-color: #f5f5f5;
         }
 
+        header p {
+            cursor: pointer;
+            position: relative;
+        }
+
+        header p:hover::before {
+            content: "O algo así";
+            position: absolute;
+             top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
         header {
             background-color: #333;
             color: #fff;
