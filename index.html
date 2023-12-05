@@ -3,72 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Invitación de Cumpleaños!</title>
+    <title>Juan Maximo Molina Brusatti - Currículum Vitae</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            align-items: center;
-            background-color: #002e15;
-            display: flex;
-            justify-content: center;
-            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        header img:hover {
+            transform: rotate(360deg);
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        section:hover {
+            background-color: #82877c;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
             margin: 0;
         }
 
-        
-        .invitation-card {
-            background-color: #125c33;
-            max-width: 400px;
-            padding: 20px;
-            border-radius: 10px;
+        li {
+            margin-bottom: 10px;
+        }
+
+        footer {
             text-align: center;
-        }
-        h1 {
-            color: #00221b;
-            background-color: #ecefed;
-            border-radius: 5px;
             padding: 10px;
+            background-color: #333;
+            color: #fff;
         }
-        p {
-            font-size: 18px;
-            color: #00221b;
-        }
-
-        #button {
-            background-color: #ecefed;
-            color: #00221b;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #button:hover {
-            background-color: #48dea5;
-        }
-       
     </style>
 </head>
 <body>
-    <div class="invitation-card">
-        <h1>¡Cumpleaños de Juan Maximo!</h1>
+    <header>
+        <img src="tu_foto.jpg" alt="Tu Foto">
+        <h1>Juan Maximo Molina Brusatti</h1>
+        <p>Desarrollador Web</p>
+    </header>
 
-        <p>¡Estás invitado a dejar tu hermoso regalito en el boton de abajo &#x1f4b8; &#x1f447; &#x1f4b8; !</p>
-       
-        <button id="button" onclick="location.href='https://link.mercadopago.com.ar/juanmaximo'">Hacer un regalo!!!</button>
+    <section id="perfil">
+        <h2>Perfil</h2>
+        <p>Edad: 21 años</p>
+        <p>Nacimiento: 20/02/2003</p>
+        <p>Localidad: Rio Cuarto, Cordoba</p>
+        <p>Nacionalidad: Argentina</p>
+    </section>
 
-    </div>
+    <section id="educacion">
+        <h2>Educación</h2>
+        <ul>
+            <li>Universidad Nacional de Rio Cuarto - Analista en sistemas - Estudiante 2023</li>
+            <!-- Agrega más elementos según sea necesario -->
+        </ul>
+    </section>
 
-    <script>
-        document.getElementById('button').addEventListener('click', function() {
-            var button = document.getElementById('button');
-            button.textContent = '¡Ya realizaste tu regalo!';
-            button.style.backgroundColor = '#66cc33';
-            button.style.cursor = 'default';
-            button.disabled = true;
-        });
-    </script>
+    <section id="experiencias">
+        <h2>Experiencias</h2>
+        <ul>
+            <li>Manejo de redes sociales</li>
+            <li>Creador de la pagina web tatata</li>
+            <li>Encargado del manejo de la pagina web tatata</li>
+            <!-- Agrega más elementos según sea necesario -->
+        </ul>
+    </section>
 
+    <section id="habilidades">
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Organización.</li>
+            <li>Gestion de redes sociales.</li>
+            <li>Responsabilidad.</li>
+            <li>Trabajo en equipo.</li>
+            <li>Comunicacion asertiva.</li>
+            <li>Manejo de lenguajes de programacion. C/html/css/javascript.</li>
+            <!-- Agrega más elementos según sea necesario -->
+        </ul>
+    </section>
 
+    <section id="idiomas">
+        <h2>Idiomas</h2>
+        <ul>
+            <li>Ingles basico</li>
+            <!-- Agrega más elementos según sea necesario -->
+        </ul>
+    </section>
+
+    <section id="contactos">
+        <h2>Contactos</h2>
+        <ul>
+            <li>Email: mjuanmolina123@gmail.com</li>
+            <li>Telefono: 358 4178955</li>
+
+            <!-- Agrega más elementos según sea necesario -->
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Juan Maximo Molina Brusatti</p>
+    </footer>
 </body>
 </html>
