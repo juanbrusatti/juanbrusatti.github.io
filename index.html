@@ -1,161 +1,54 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan Maximo Molina Brusatti - Currículum Vitae</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-
-        header p {
-            cursor: pointer;
-            position: relative;
-        }
-
-        header p:hover::before {
-            content: "O algo así";
-            position: absolute;
-             top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #333;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 5px;
-            z-index: 1;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        header img {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            margin-right: 20px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        header img:hover {
-            transform: rotate(360deg);
-        }
-
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        section:hover {
-            background-color: #82877c;
-        }
-
-        h2 {
-            color: #333;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: #fff;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    button {
+      position: absolute;
+    }
+  </style>
+  <title>Hola Cami, quieres ser mi novia?</title>
 </head>
 <body>
-    <header>
-        <img src="tu_foto.jpg" alt="Tu Foto">
-        <h1>Juan Maximo Molina Brusatti</h1>
-        <p>Desarrollador Web</p>
-    </header>
 
-    <section id="perfil">
-        <h2>Perfil</h2>
-        <p>Edad: 21 años</p>
-        <p>Nacimiento: 20/02/2003</p>
-        <p>Localidad: Rio Cuarto, Cordoba</p>
-        <p>Nacionalidad: Argentina</p>
-    </section>
+<div id="pregunta-container">
+  <p id="pregunta">¿Presionar el botón 'Sí'?</p>
+  <button id="si-btn" onclick="moverBoton()">Sí</button>
+  <button id="no-btn" onclick="responderNo()">No</button>
+</div>
 
-    <section id="educacion">
-        <h2>Educación</h2>
-        <ul>
-            <li>Universidad Nacional de Rio Cuarto - Analista en sistemas - Estudiante 2023</li>
-            <!-- Agrega más elementos según sea necesario -->
-        </ul>
-    </section>
+<script>
+  function moverBoton() {
+    var botonSi = document.getElementById('si-btn');
+    var preguntaContainer = document.getElementById('pregunta-container');
 
-    <section id="experiencias">
-        <h2>Experiencias</h2>
-        <ul>
-            <li>Manejo de redes sociales</li>
-            <li>Creador de la pagina web tatata</li>
-            <li>Encargado del manejo de la pagina web tatata</li>
-            <!-- Agrega más elementos según sea necesario -->
-        </ul>
-    </section>
+    var maxX = window.innerWidth - botonSi.clientWidth;
+    var maxY = window.innerHeight - botonSi.clientHeight;
 
-    <section id="habilidades">
-        <h2>Habilidades</h2>
-        <ul>
-            <li>Organización.</li>
-            <li>Gestion de redes sociales.</li>
-            <li>Responsabilidad.</li>
-            <li>Trabajo en equipo.</li>
-            <li>Comunicacion asertiva.</li>
-            <li>Manejo de lenguajes de programacion. C/html/css/javascript.</li>
-            <!-- Agrega más elementos según sea necesario -->
-        </ul>
-    </section>
+    var randomX = Math.floor(Math.random() * maxX);
+    var randomY = Math.floor(Math.random() * maxY);
 
-    <section id="idiomas">
-        <h2>Idiomas</h2>
-        <ul>
-            <li>Ingles basico</li>
-            <!-- Agrega más elementos según sea necesario -->
-        </ul>
-    </section>
+    botonSi.style.left = randomX + 'px';
+    botonSi.style.top = randomY + 'px';
 
-    <section id="contactos">
-        <h2>Contactos</h2>
-        <ul>
-            <li>Email: mjuanmolina123@gmail.com</li>
-            <li>Telefono: 358 4178955</li>
+    if (preguntaContainer.contains(botonSi)) {
+      preguntaContainer.removeChild(botonSi);
+      document.body.appendChild(botonSi);
+    }
+  }
 
-            <!-- Agrega más elementos según sea necesario -->
-        </ul>
-    </section>
+  function responderNo() {
+    alert("Yo tampoco");
+  }
+</script>
 
-    <footer>
-        <p>&copy; 2023 Juan Maximo Molina Brusatti</p>
-    </footer>
 </body>
 </html>
