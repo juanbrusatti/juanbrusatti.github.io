@@ -11,42 +11,50 @@
       height: 100vh;
       margin: 0;
     }
+    #pregunta-container {
+      position: relative;
+    }
     button {
+      cursor: pointer;
+    }
+    #si-btn {
       position: absolute;
+      left: 200px; /* Ajusta la posición inicial del botón "Sí" */
+    }
+    #no-btn {
+      position: relative; /* Cambia a posición relativa para que no se solape con "Sí" */
     }
   </style>
-  <title>Hola Cami, quieres ser mi novia?</title>
+  <title>Pregunta Interactiva</title>
 </head>
 <body>
 
 <div id="pregunta-container">
-  <p id="pregunta">¿Presionar el botón 'Sí'?</p>
-  <button id="si-btn" onclick="moverBoton()">Sí</button>
+  <p id="pregunta">Hola Cami, ¿quieres ser mi novia?</p>
+  <button id="si-btn" onmouseover="moverBoton()" onclick="responderSi()">Sí</button>
   <button id="no-btn" onclick="responderNo()">No</button>
 </div>
 
 <script>
-  function moverBoton() {
-    var botonSi = document.getElementById('si-btn');
-    var preguntaContainer = document.getElementById('pregunta-container');
-
-    var maxX = window.innerWidth - botonSi.clientWidth;
-    var maxY = window.innerHeight - botonSi.clientHeight;
-
-    var randomX = Math.floor(Math.random() * maxX);
-    var randomY = Math.floor(Math.random() * maxY);
-
-    botonSi.style.left = randomX + 'px';
-    botonSi.style.top = randomY + 'px';
-
-    if (preguntaContainer.contains(botonSi)) {
-      preguntaContainer.removeChild(botonSi);
-      document.body.appendChild(botonSi);
-    }
+  function responderSi() {
+    alert("¡Eso suena genial!");
   }
 
   function responderNo() {
     alert("Yo tampoco");
+  }
+
+  function moverBoton() {
+    // Mueve el botón "Sí" a una posición aleatoria en la pantalla
+    var botonSi = document.getElementById("si-btn");
+    var windowHeight = window.innerHeight;
+    var windowWidth = window.innerWidth;
+
+    var nuevoTop = Math.random() * (windowHeight - botonSi.clientHeight);
+    var nuevoLeft = Math.random() * (windowWidth - botonSi.clientWidth);
+
+    botonSi.style.top = nuevoTop + "px";
+    botonSi.style.left = nuevoLeft + "px";
   }
 </script>
 
